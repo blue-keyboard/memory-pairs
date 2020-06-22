@@ -8,7 +8,7 @@ body {
 }
 
 #header {
-    margin: 40px 0;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     font-family: monospace;
@@ -42,10 +42,14 @@ body {
 
 .wrapper {
     width: 1000px;
-    margin: 0 20px
+    height: 85vh;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .board {
+    margin: auto 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1rem
@@ -55,7 +59,7 @@ body {
     .board {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-gap: 1rem
+        grid-gap: 1rem;
     }
 
     #title {
@@ -71,6 +75,10 @@ body {
 }
 
 @media (max-width: 450px) {
+
+    .board {
+        grid-gap: 12px;
+    }
 
     #header {
         margin: 20px 0;
