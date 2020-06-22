@@ -1,14 +1,15 @@
 let tiles = document.getElementsByClassName('tile')
 let count = 0;
 let lastPiece;
+let lastTile;
 let pieces = document.getElementsByClassName('piece')
 
 for (let tile of tiles) {
     tile.addEventListener('click', function () {
 		let piece = tile.querySelector('.piece')
-		if (piece.id !== 'display' && count > -1) {
+		if (!(piece.classList.contains('display')) && count > -1) {
 			count++
-			piece.setAttribute('id', 'display')
+			piece.classList.add('display')
 			if (count === 2) {    
 				count = 0
 				if (piece.src !== lastPiece.src) {
@@ -16,12 +17,20 @@ for (let tile of tiles) {
 					count = -1 // <---
 					// causing to mess up my lastPiece variable, this way 'click' event is blocked.
 					setTimeout(function() {
-						piece.removeAttribute('id')
-						lastPiece.removeAttribute('id')
+						piece.classList.remove('display')
+						lastPiece.classList.remove('display')
 						count = 0
 					}, 700)
+				} else {
+					piece.setAttribute('id', 'piece-animation')
+					lastPiece.setAttribute('id', 'piece-animation')
+					tile.setAttribute('id', 'tile-animation')
+					lastTile.setAttribute('id', 'tile-animation')
 				}
-			} else lastPiece = piece
+			} else {
+				lastPiece = piece
+				lastTile = tile;
+			}
 		}
     })
 }
@@ -29,8 +38,12 @@ for (let tile of tiles) {
 document.getElementById('newgame').addEventListener('click', function () {
 	let imgs = shuffle(pieces);
 
+	for (let tile of tiles) {
+		tile.removeAttribute('id')
+	}
 	for (let piece of pieces) {
-		piece.removeAttribute('id')	
+		piece.classList.remove('display')
+		piece.removeAttribute('id')
 		piece.src = imgs.pop()
 	}
 })
