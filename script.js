@@ -10,8 +10,6 @@ let lastTile;
 
 init();
 
-// tile = tiles[i]
-
 for (let i = 0; i < tiles.length; i++) {
 	let tile = tiles[i];
     tile.addEventListener('click', function () {
