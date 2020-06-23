@@ -101,7 +101,7 @@ body {
     }
 
     #header {
-        margin: 20px 0; 
+        margin: 20px 0;
     }
 
     #title {
@@ -164,9 +164,11 @@ body {
         100% { background-color: #092447 }
     }
 
-/* **********************   HARD MODE   ******************** */
 
-
-/* .hard {
-    display: none;
-} */
+#tile-win-anim {
+    animation: tile-win 1s forwards;
+}
+    @keyframes tile-win {
+        0% { background-color: #092447; border: #092447 }
+        100% { background-color: #ac61b9 ; border: #ac61b9 }
+    }
