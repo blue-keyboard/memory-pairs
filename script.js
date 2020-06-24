@@ -76,7 +76,8 @@ document.getElementById('diff').addEventListener('click', function() {
 function init() {
 	score = 0;
 	moves = 0;
-
+	count = 0;
+	
 	if (hardMode) {
 		imgs = ["img/bat.svg", "img/bat.svg", "img/beetle.svg", "img/beetle.svg", "img/chinese_dragon.svg", "img/chinese_dragon.svg", "img/crow.svg", "img/crow.svg", "img/dog.svg", "img/dog.svg", "img/flying_fish.svg", "img/flying_fish.svg", "img/frog.svg", "img/frog.svg", "img/ibex.svg", "img/ibex.svg", "img/killer_whale.svg", "img/killer_whale.svg", "img/mammoth.svg", "img/mammoth.svg", "img/mantaray.svg", "img/mantaray.svg", "img/monkey.svg", "img/monkey.svg", "img/owl.svg", "img/owl.svg", "img/peacock.svg", "img/peacock.svg", "img/rabbit.svg", "img/rabbit.svg", "img/ram.svg", "img/ram.svg", "img/salamander.svg", "img/salamander.svg", "img/turtle.svg", "img/turtle.svg", "img/cobra.svg", "img/cobra.svg", "img/alligator.svg", "img/alligator.svg"]
 		pieces = document.getElementsByClassName('piece')
